@@ -226,3 +226,31 @@ margin:0 20px;
 max-height:100% !important;
 max-width:100% !important;
 }
+
+
+
+.site-footer {
+	margin:0;
+	padding:0;
+	border:none;
+	background: #B92227;
+	color:white;
+	font-family: 'Orbitron', sans-serif;
+	letter-spacing:.3rem;
+	text-transform:uppercase;
+
+}
+/* FOOTER */
+.site-footer .wrap {
+    padding-bottom: 0.5em;
+    padding-top: 1em;
+}
+
+.site-footer .widget-column.footer-widget-1 {
+	width:100% !important;
+}
+
+.site-footer .widget-area, .site-footer .widget,  .site-footer .widget p {
+	padding:0 !important;
+	margin:0 !important;
+}
