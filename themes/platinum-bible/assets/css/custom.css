@@ -9,6 +9,13 @@ h1, h2, h3, .site-title {
 	letter-spacing:.3rem;
 }
 
+a {
+	color:#C52428;
+	text-decoration:underline;
+	font-weight:600;
+}
+
+
 /* COLORS */
 .lt_grey_bg {background: #efefef;}
 .md_grey_bg {background: #D9DBDC;}
@@ -24,12 +31,66 @@ h1, h2, h3, .site-title {
 section.content-block {
 	padding: 4em 0;
 }
+
 section.content-block header h1 {
 text-align:center;
 padding-bottom:.5em;
 }
 
+.row {
+	margin:0 auto !important;
+}
 
+section.hero.header {
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+	height:60vh;
+	max-height:700px;
+	min-height:150px;
+	position:relative;
+}
+
+section.hero.header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(transparent 40%, rgba(53, 10, 11,.65));
+}
+
+section.hero.header header {
+	position:absolute;
+	bottom:20px;
+}
+
+section.hero.header header h1 {
+	color:white;
+	font-size:7.2rem;
+	font-weight:800;
+	margin: 0;
+    padding: 0;
+}
+
+section.hero.header header > span {
+   	color:white;
+	display:inline-block;
+	font-size:1.2rem;
+	background: #B92227;
+	padding:2px 10px;	
+	font-family: 'Orbitron', sans-serif;
+	text-transform:uppercase;
+	font-weight:500;
+	letter-spacing:.2rem;
+
+}
+ul.sidebar.accordion,ul.sidebar.accordion ul {
+	background:white;
+	padding:10px;
+	list-style-type:none;
+}
 
 
 /* NAVIGATION & HEADER */

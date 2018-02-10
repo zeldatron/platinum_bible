@@ -13,10 +13,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<section class="hero header" style="background: url(<?php the_post_thumbnail_url( 'full' ); ?>) no-repeat center center">
-		<header>
-		    <h1><span><?php the_field('ip_id'); ?></span><?php the_title(); ?></h1>
-		</header>
+	<section class="hero header" style="background-image: url(<?php the_post_thumbnail_url( 'full' ); ?>);">
+		<div class="wrap">
+			<header>
+				<span><?php the_field('ip_id'); ?></span>
+			    <h1><?php the_title(); ?></h1>
+			</header>
+		</div>
 	</section>
 	<section class="content-block lt_grey_bg">
 	    <div class="wrap row">
@@ -82,7 +85,7 @@
 								<?php
 							    foreach( $characters  as $post):  
 							        setup_postdata($post);  
-							        echo '<li><a href="' . get_the_permalink() . '">' . get_the_title(). '</span></li>';  
+							        echo '<li><a href="' . get_the_permalink() . '">' . get_the_title(). '</a></li>';  
 							    endforeach;  
 							    wp_reset_postdata(); 
 								?>							
@@ -100,7 +103,7 @@
 								<?php
 							    foreach( $stories  as $post):  
 							        setup_postdata($post);  
-							        echo '<li><a href="' . get_the_permalink() . '">' . get_the_title(). '</span></li>';  
+							        echo '<li><a href="' . get_the_permalink() . '">' . get_the_title(). '</a></li>';  
 							    endforeach;  
 							    wp_reset_postdata(); 
 								?>							
