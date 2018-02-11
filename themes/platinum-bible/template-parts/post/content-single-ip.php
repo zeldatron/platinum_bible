@@ -139,26 +139,26 @@
 			$avalanche = get_field('avalanche');
 			if( $avalanche ) { ?>
 	<section class="content-block dk_grey_bg">
-	    <div class="wrap">
+	    <div class="wrap full-width">
 	    
-	     <header>
-		     <h1 class="white_text">Avalanche</h1>
-		 </header>
-	    
-			<ul class="carousel">
+		     <header>
+			     <h1 class="white_text">Avalanche</h1>
+			 </header>
+
+			 <div class="grid">
 				<?php 
 				foreach( $avalanche as $image ): 
-			        $content = '<li>';
+			        $content = '<div class="grid-item">';
 			            $content .= '<a class="gallery_image" href="'. $image['url'] .'">';
 			                 $content .= '<img src="'. $image['sizes']['medium_large'] .'" alt="'. $image['alt'] .'" />';
 			            $content .= '</a>';
-			        $content .= '</li>';
+			        $content .= '</div>';
 				    if ( function_exists('slb_activate') ){
 				        $content = slb_activate($content);
 				    }  
 					echo $content; 
 				endforeach; ?>
-	        </ul>
+			 </div>		 
 	    </div>
 	</section>
 	<?php } ?>  
@@ -169,25 +169,26 @@
 		if( $dev_art ) { ?>
 	
 	<section class="content-block md_grey_bg">
-	    <div class="wrap">
+	    <div class="wrap full-width">
 	    
 	     <header>
 		     <h1>Development Art</h1>
 		 </header>
-			<ul class="carousel">
+
+			 <div class="grid">
 				<?php 
 				foreach( $dev_art as $image ): 
-			        $content = '<li>';
+			        $content = '<div class="grid-item md-border-color">';
 			            $content .= '<a class="gallery_image" href="'. $image['url'] .'">';
 			                 $content .= '<img src="'. $image['sizes']['medium_large'] .'" alt="'. $image['alt'] .'" />';
 			            $content .= '</a>';
-			        $content .= '</li>';
+			        $content .= '</div>';
 				    if ( function_exists('slb_activate') ){
 				        $content = slb_activate($content);
 				    }  
 					echo $content; 
 				endforeach; ?>
-	        </ul>
+			 </div>		 
 	    </div>
 	</section>
 	<?php } ?>
@@ -206,7 +207,7 @@
 		     <h1 class="red_text">Comics</h1>
 		 </header>
 	    
-			<ul class="comics">
+			<ul class="comics flex-gallery">
 				    <?php foreach( $comics as $image ): 
 				        $icon =  $image['icon'];
 				        $thumbnail = get_field('cover_image', $image['id']);

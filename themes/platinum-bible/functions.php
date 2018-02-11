@@ -469,6 +469,10 @@ function platinumbible_scripts() {
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/assets/css/vendor/slick-slider/slick.css' );
 	wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/assets/css/vendor/slick-slider/slick-theme.css' );
 
+	//Masonry
+	wp_enqueue_script( 'masonry', get_theme_file_uri( '/assets/js/vendor/masonry-docs.min.js' ), array( 'jquery' ));
+	wp_enqueue_script( 'images-loaded', get_theme_file_uri( '/assets/js/vendor/imagesloaded.js' ), array( 'jquery, masonry' ));
+
 	//FontAwesome
 	wp_enqueue_script( 'fontawesome', "https://use.fontawesome.com/releases/v5.0.6/js/all.js", '','',false);
 

@@ -31,6 +31,11 @@ a:focus {
 
 
 /* PAGE STRUCTURE */
+
+.wrap.full-width {
+	max-width:10000px;
+}
+
 section.content-block {
 	padding: 2em 0;
 }
@@ -432,6 +437,48 @@ margin:15px 0;
     margin-right:.5em;
 }
 
+
+/* MASONRY */
+.grid-item {
+  float: left;
+  width: 100%;
+  padding-bottom:5px;
+}
+
+.grid-item a img, .flex-gallery a img{
+	max-width:100%;
+	border:5px solid #111;
+	display:block;
+}
+
+.md-border-color a img {
+	border-color:#3F3F3F;
+	
+}
+
+.lt-border-color a img {
+	border-color: #D9DBDC;
+	
+}
+
+.grid-item a:hover img, .flex-gallery a:hover img{
+	border-color:#C52428 !important;
+}
+
+
+@media screen and (min-width: 30em) {	
+    .grid-item {width: 50%;padding:5px;}
+}
+
+@media screen and (min-width: 48em) {
+    .grid-item {width:25%;}
+
+}
+
+@media screen and (min-width: 60em) {
+    .grid-item {width: 20%;padding:10px;}
+
+}
 
 /* CAROUSEL */
 
