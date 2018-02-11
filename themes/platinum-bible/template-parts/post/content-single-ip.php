@@ -28,7 +28,7 @@
 			    <?php 
 			        if( have_rows('log_lines') ){
 			    ?>
-			    <h2>Logline</h2>
+			    <h2 class="red_text">Logline</h2>
 			    <?php    
 					    while ( have_rows('log_lines') ) : the_row();
 					        if(get_sub_field('log_line_active')) {
@@ -38,16 +38,16 @@
 					}
 			    ?>
 			    
-			    <h2>Synopsis</h2>
+			    <h2 class="red_text">Synopsis</h2>
 			    <?php the_content(); ?>
 			</div>
 			<div class="col-sm-12 col-md-4 col-lg-3">
 			    <ul class="sidebar accordion">
 			        <li>
-				        <a href="#" class="accordion-toggle">Stats</a>
+				        <a href="#" class="accordion-toggle"><i class="fas fa-angle-right"></i>Stats</a>
 				        <article class="accordion-content">
-							<ul class="stats">
-								<li><strong>Genres: </strong> 
+							<ul class="lines stats">
+								<li class="commas"><strong>Genres: </strong> 
 									<?php 
 									    $cats =get_the_terms( $post, 'ip_cats' );
 									    foreach ( $cats as $cat ):
@@ -55,7 +55,7 @@
 									    endforeach;
 									 ?>
 								</li>
-								<li><strong>Location in Metaverse: </strong> 
+								<li class="commas"><strong>Location in Multiverse: </strong> 
 								<?php
 									$universes = get_field('ip_universes');
 									if( $universes ): 
@@ -79,7 +79,7 @@
 					if( $characters  ): ?>
 			        
 			        <li>
-				        <a href="#" class="accordion-toggle">Characters</a>
+				        <a href="#" class="accordion-toggle"><i class="fas fa-angle-right"></i>Characters</a>
 				        <article class="accordion-content">
 							<ul>
 								<?php
@@ -97,7 +97,7 @@
 					if( $stories  ): ?>
 			        
 			        <li>
-				        <a href="#" class="accordion-toggle">Stories</a>
+				        <a href="#" class="accordion-toggle"><i class="fas fa-angle-right"></i>Stories</a>
 				        <article class="accordion-content">
 							<ul>
 								<?php
@@ -114,15 +114,15 @@
 		      <?php  if( have_rows('ip_scripts') ): ?>
 			        
 			        <li>
-				        <a href="#" class="accordion-toggle">Scripts</a>
+				        <a href="#" class="accordion-toggle"><i class="fas fa-angle-right"></i>Scripts</a>
 				        <article class="accordion-content">
-							<ul>
+							<ul class="lines">
 							    <?php    
 								while ( have_rows('ip_scripts') ) : the_row(); 
 								$file = get_sub_field('ip_script_file');
 								?>
 	                            <li>
-	                                 <a href="<?php echo $file['url']; ?>" class="dl_link"><?php echo $file['title']; ?></a>
+	                                 <a href="<?php echo $file['url']; ?>" class="dl_link" target="_blank"><?php echo $file['title']; ?></a>
 	                                 <?php if (get_sub_field('ip_script_author')) {  echo 'by ' .get_sub_field('ip_script_author'); } ?>
 								</li>
 								<?php endwhile; ?>
@@ -222,7 +222,36 @@
 	    </div>
 	</section>
 	<?php } ?>     
-
-   
-
+    <?php 
+		if( have_rows('ip_treatments')) { 
+			
+	?>	
+	<section class="content-block lt_grey_bg">
+	    <div class="wrap">
+	    
+		     <header>
+			     <h1>Treatments</h1>
+			 </header>
+	    
+			<div class="treatments accordion">
+			    <?php    
+				while ( have_rows('ip_treatments') ) : the_row(); 
+				?>
+                <article>  
+               		 <header class="accordion-toggle">
+               		     
+               		     <h1><i class="fas fa-angle-right"></i><?php the_sub_field('treatment_title'); ?></h1>
+               		     <h2><?php the_sub_field('treatment_author'); ?> | <?php the_sub_field('treatment_date'); ?></h2>
+               		 </header>
+               		 <div class="accordion-content">
+               		     <div class="inner">
+	               		 <?php the_sub_field('treatment_content'); ?>
+	               		 </div>
+               		 </div>
+				</article>
+				<?php endwhile; ?>
+	        </div>
+	    </div>
+	</section>
+	<?php } ?>
 </article>

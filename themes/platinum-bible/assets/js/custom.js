@@ -1,15 +1,24 @@
-jQuery(document).ready(function() {
+(function($) {
 
-	jQuery('.timeline-inner').timeline();
-jQuery('.carousel').slick({
-  infinite: false,
-  slidesToShow: 1,
-  slidesToScroll: 2,
-  variableWidth: true
-});
-			
-});
+$('document').ready(function() {
 
+	$('.timeline-inner').timeline();
+	
+	$('.carousel').slick({
+		  infinite: false,
+		  slidesToShow: 1,
+		  slidesToScroll: 2,
+		  variableWidth: true
+		});
+    });
+    
+    
+    $('.accordion-toggle').on('click', function(e) {
+	    e.preventDefault();
+	    $(this).toggleClass('clicked');
+    });
+
+})(jQuery);
 
 (function($) {$.fn.timeline = function(options) {
 
@@ -68,7 +77,4 @@ jQuery('.carousel').slick({
 		    object.css({top: newY, left: newX});
 	    }
 	};
-	
-	
-
-})( jQuery );
+})(jQuery);

@@ -456,7 +456,7 @@ function platinumbible_scripts() {
 		$platinumbible_l10n['collapse']       = __( 'Collapse child menu', 'platinumbible' );
 		$platinumbible_l10n['icon']           = platinumbible_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
 	}
-/* 	wp_enqueue_script( 'platinumbible-jquery','https://code.jquery.com/jquery-2.2.4.min.js', array( 'jquery' ), '20160816', true ); */
+
 	wp_enqueue_script( 'platinumbible-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
 	
 
@@ -468,11 +468,9 @@ function platinumbible_scripts() {
 	wp_enqueue_script( 'slick', get_theme_file_uri( '/assets/js/vendor/slick.js' ), array( 'jquery' ));
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/assets/css/vendor/slick-slider/slick.css' );
 	wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/assets/css/vendor/slick-slider/slick-theme.css' );
-	
-/*
-	wp_enqueue_script( 'flexslider', get_theme_file_uri( '/assets/js/vendor/jquery.flexslider-min.js' ), array( 'jquery' ));
-	wp_enqueue_style( 'flexslider-css', get_template_directory_uri() . '/assets/css/vendor/flexslider/flexslider.css' );
-*/
+
+	//FontAwesome
+	wp_enqueue_script( 'fontawesome', "https://use.fontawesome.com/releases/v5.0.6/js/all.js", '','',false);
 
 	//Custom JS
 	wp_enqueue_script( 'platinumbible-custom', get_theme_file_uri( '/assets/js/custom.js' ), array( 'jquery', 'slick' ), '1.0', true );
