@@ -315,7 +315,7 @@ add_filter( 'wp_resource_hints', 'platinumbible_resource_hints', 10, 2 );
  */
 function platinumbible_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Blog Sidebar', 'platinumbible' ),
+		'name'          => __( 'Bible TOC', 'platinumbible' ),
 		'id'            => 'sidebar-1',
 		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'platinumbible' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
