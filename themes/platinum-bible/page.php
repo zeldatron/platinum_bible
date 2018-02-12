@@ -17,22 +17,24 @@
 
 get_header(); ?>
 
-<div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main col-xs-12" role="main">
+<main id="main" class="site-main" role="main">
+   <div class="wrap row">
+        <div class="col-sm-12 col-md-8 col-lg-9">
+	<?php
+	while ( have_posts() ) : the_post();
+		get_template_part( 'template-parts/page/content', 'page' );
 
-			<?php
-			while ( have_posts() ) : the_post();
-			
-			  
+	endwhile; // End of the loop.
+	?>
+	    </div>
+       	
+       	
+       	<div class="col-sm-12 col-md-4 col-lg-3">
+	    	<?php get_sidebar(); ?>
 
-				get_template_part( 'template-parts/page/content', 'page' );
+	    </div>
 
-			endwhile; // End of the loop.
-			?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div><!-- .wrap -->
+	<div>
+</main><!-- #main -->
 
 <?php get_footer();

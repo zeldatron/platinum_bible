@@ -214,7 +214,7 @@
 				        if($thumbnail){ $icon  = $thumbnail['url']; }				        
 				    ?>
 				    <li>
-				        <a href="<?php echo $image['url']; ?>">
+				        <a href="<?php echo $image['url']; ?>" targer="_blank">
 					         <img src="<?php echo $icon ?>" alt="<?php echo $image['title']; ?>"/>
 				        </a>
 				    </li>

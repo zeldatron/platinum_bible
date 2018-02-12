@@ -19,7 +19,6 @@
 	endif;
 	?>
 	<header class="entry-header">
-	REGULAR 
 		<?php
 		if ( 'post' === get_post_type() ) {
 			echo '<div class="entry-meta">';
