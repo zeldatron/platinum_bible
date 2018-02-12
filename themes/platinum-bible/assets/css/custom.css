@@ -50,7 +50,7 @@ a:focus {
 body { background: #efefef; }
 
 
-main { padding: 4em 0 2em 0; }
+main { padding: 4em 0 2em 0;min-height: calc(100vh - 130px);}
 
 .single-ip main{ padding-top:0; }
 
